@@ -1,0 +1,93 @@
+body {
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Centraliza horizontalmente */
+    justify-content: center;
+    /* Centraliza verticalmente */
+    min-height: 100vh;
+    position: relative;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    /* Centraliza verticalmente */
+    margin-bottom: 20px;
+    /* Espaço abaixo do header */
+    margin-top: 80px;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+h1,
+h2 {
+    margin: 0;
+    text-align: center;
+    /* Centraliza o texto horizontalmente */
+}
+
+nav {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 10px;
+    background-color: #333;
+    color: white;
+    width: 100%;
+    padding: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav li {
+    margin-right: 10px;
+}
+
+footer {
+    margin-top: auto;
+    margin-bottom: -20px;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+
+.card-img-height {
+    height: 100px;
+    /* Ajuste a altura conforme necessário */
+    object-fit: cover;
+    /* Isso permite que a imagem mantenha suas proporções e preencha o espaço uniformemente */
+}
+
+nav ul li.active a {
+    color: #fff;
+    /* Cor do texto ativo */
+    background-color: #007bff;
+    /* Cor de fundo ativa (azul) */
+    border-radius: 5px;
+    /* Borda arredondada */
+    padding: 5px 10px;
+    /* Espaçamento interno */
+    font-weight: bold;
+    /* Texto em negrito */
+    text-decoration: none;
+}
+
+nav ul li:not(.active) a {
+    color: #fff; /* Cor do texto não ativo */
+    text-decoration: none;
+}

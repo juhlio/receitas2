@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ordenando</title>
+</head>
+<body>
+  <label for="valor">Valor:</label>
+  <input type="number" id="valor">
+  <button onclick="add()">Adicionar</button>
+  <br><br>
+  <label for="algoritmo">Escolha um algoritmo de ordenação:</label>
+  <select id="algoritmo">
+    <option value="bubble">Bubble Sort</option>
+    <option value="selection">Selection Sort</option>
+    <option value="quick" selected>Quick Sort</option>
+  </select>
+  <button onclick="ordenar()">Ordenar</button>
+  <button onclick="misturar()">Misturar</button>
+  <ul id="valores"></ul>
+
+  <!-- Incluindo o arquivo "ordenando.js" -->
+  <script src="exemplosjs/ordenando.js"></script>
+
+  <!-- Chamada das funções -->
+  <script>
+    // Função add
+    function add() {
+      const valor = document.getElementById('valor').value;
+      const valores = document.getElementById('valores');
+      const node = document.createElement('li');
+      const textNode = document.createTextNode(valor);
+      node.appendChild(textNode);
+      valores.appendChild(node);
+    }
+
+    // Função ordenar
+    function ordenar() {
+      const valores = document.getElementById('valores').children;
+      const vetor = Array.from(valores).map(item => parseInt(item.innerHTML));
+      const algoritmo = document.getElementById('algoritmo').value;
+
+      switch (algoritmo) {
+        case 'bubble':
+          bubble_sort(vetor);
+          break;
+        case 'selection':
+          selection_sort(vetor);
+          break;
+        case 'quick':
+          quick_sort(vetor);
+          break;
+      }
+
+      document.getElementById('valores').innerHTML = vetor.map(item => `<li>${item}</li>`).join('');
+    }
+
+    // Função misturar
+    function misturar() {
+      const valores = Array.from(document.getElementById('valores').children).map(item => parseInt(item.innerHTML));
+      shuffle(valores);
+
+      document.getElementById('valores').innerHTML = valores.map(item => `<li>${item}</li>`).join('');
+    }
+  </script>
+</body>
+</html>
